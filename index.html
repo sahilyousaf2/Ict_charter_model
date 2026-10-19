@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FUCKING GOLD</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div>
+    <h1>FUCKING GOLD</h1>
+    <p class="sub">Sahil Trader, CEO &amp; Trader &middot; ICT Charter Model V3 &middot; XAUUSD</p>
+  </div>
+  <div class="tools">
+    <span id="progress" class="progress">0 / 30 Trades Recorded</span>
+    <button type="button" id="exportBtn" class="btn ghost">Export JSON</button>
+    <button type="button" id="importBtn" class="btn ghost">Import JSON</button>
+    <input type="file" id="importFile" accept="application/json,.json" hidden>
+  </div>
+</header>
+
+<main>
+  <section id="grid" class="grid" aria-label="30 trades"></section>
+
+  <section id="panel" class="panel" hidden>
+    <div class="panel-head">
+      <h2 id="panelTitle">Trade 01</h2>
+      <button type="button" id="closeBtn" class="btn ghost">Close</button>
+    </div>
+
+    <form id="form" autocomplete="off">
+      <div id="alerts" class="alerts"></div>
+
+      <h3>ICT Charter Model V3 Checklist</h3>
+      <ol id="checklist" class="checklist"></ol>
+
+      <h3>Trade Record</h3>
+      <div class="fields">
+        <label>Date <input type="date" name="date"></label>
+        <label>Session
+          <select name="session"><option value="">Select</option><option>London</option><option>New York</option></select>
+        </label>
+        <label>Entry price <input type="number" step="any" name="entry"></label>
+        <label>Stop-loss price <input type="number" step="any" name="sl"></label>
+        <label>Take-profit price <input type="number" step="any" name="tp"></label>
+        <label>Lot size <input type="number" step="any" name="lot"></label>
+        <label>Result
+          <select name="result"><option value="">Select</option><option>Win</option><option>Loss</option><option>Breakeven</option><option>No Trade</option></select>
+        </label>
+        <label>Profit / loss ($) <input type="number" step="any" name="pnl"></label>
+        <div class="rf">
+          <span>Rules followed?</span>
+          <label class="pill"><input type="radio" name="rules" value="yes"><b>YES</b></label>
+          <label class="pill"><input type="radio" name="rules" value="no"><b>NO</b></label>
+        </div>
+        <label class="wide">Notes <textarea name="notes" rows="2" maxlength="300"></textarea></label>
+      </div>
+
+      <div class="actions">
+        <button type="button" id="saveChecklistBtn" class="btn">Save Checklist</button>
+        <button type="button" id="saveBtn" class="btn gold">Save</button>
+        <button type="button" id="editBtn" class="btn ghost">Edit</button>
+      </div>
+      <p id="msg" class="msg" role="status"></p>
+    </form>
+  </section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
